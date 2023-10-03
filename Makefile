@@ -3,7 +3,7 @@ CFLAGS = -Wall -Werror -O2
 all: md5tee
 
 md5tee: md5tee.c
-	gcc -Wall -Werror -O2 -o $@ $^ -lcrypto
+	gcc -Wall -O2 -o $@ $^ -lcrypto
 
 clean:
 	rm -v -f *~
