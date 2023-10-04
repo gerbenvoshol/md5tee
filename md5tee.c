@@ -67,10 +67,10 @@ int main (int argc, char ** argv) {
         }
     }
 
-	if (argc >= 2) {
-		if ((access(argv[1],F_OK) == 0) && !append) {
+	if ((argc - optind) == 1) {
+		if ((access(argv[optind],F_OK) == 0) && !append) {
 			fprintf(stderr,"md5tee: ERROR: output file '%s' exists. "
-				"please remove it before running.\n",argv[1]);
+				"please remove it before running.\n",argv[optind]);
 			return 1;
 		}
 	}
