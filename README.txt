@@ -14,7 +14,6 @@ INSTALL INSTRUCTIONS:
   # will install to /usr/local/bin
   make install
 
-
 DESCRIPTION:
 
  This program pipes content from stdin to stdout and calculates its
@@ -24,24 +23,15 @@ DESCRIPTION:
  Will pipe from command1 to command2, and write size and md5sum to stderr
 
  Usage: command1 | md5tee filename | command2
- Will pipe from command1 to command2. writes size and md5sum to filename
+ Will pipe from command1 to command2. writes md5sum to filename
  Note: md5tee will create the output file, it must not exists previously
 
- Output format: SIZE MD5SUM S3MD5SUM
- s3md5sum is md5 in s3-storage format
  Chunksize can be changed with environment variable CHUNKSIZE (in bytes)
  see --help for default CHUNKSIZE. Use 0 to disable it.
-
- This program is useful when the file is too big and there is not enough
- disk space in local filesystem to store the tarfile and calculate md5
- Example: tar -z -c -f /dev/stdout /path/with/huge/files/ | md5tee save_the_md5_locally.txt | s3cmd put - s3://somewhere/somefilename
-
- You can view md5sum of files on s3 storage with this command:
- s3cmd --list-md5 ls s3://somewhere
  
- (c) 2020 Pedro Zorzenon Neto https://github.com/pzn1977/md5tee
+ Based on Pedro Zorzenon Neto https://github.com/pzn1977/md5tee
 
- SUPPORT ME: https://www.buymeacoffee.com/pzn77
+ (c) 2023 https://github.com/gerbenvoshol/md5tee 
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published
