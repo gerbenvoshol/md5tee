@@ -122,7 +122,7 @@ int main (int argc, char ** argv) {
 
 	if (argc == optind) {
 		if (name) {
-			fprintf(stderr,"%s  %s\n", md5s, name);
+			fprintf(stderr,"%s\t%s\n", md5s, name);
 		} else {
 			fprintf(stderr,"%s\n", md5s);
 		}
@@ -134,7 +134,7 @@ int main (int argc, char ** argv) {
 			return 3;
 		}
 		if (name) {
-			fprintf(fh,"%s  %s\n", md5s, name);
+			fprintf(fh,"%s\t%s\n", md5s, name);
 		} else {
 			fprintf(fh,"%s\n", md5s);
 		}
